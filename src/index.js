@@ -6,3 +6,5 @@ import '@fortawesome/fontawesome-free/js/brands'
 
 // project code
 import './styles/style.scss'
+
+import './components/sendingDataFromForms'
