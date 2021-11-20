@@ -1,31 +1,118 @@
+@import 'null';
 @import 'global';
 @import 'vars';
 
 
-body {
-  background: rgba(#000, 30%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
+.form {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 55px;
+    background: rgba(#fff, 10%);
+    border-radius: 5px;
+    box-shadow: 0 0 2px 0 rgba(#000, 10%),
+                0 0 5px 0 rgba(#000, 10%),
+                0 0 10px 0 rgba(#000, 10%);
+    @media screen and (max-width: 425px) {
+      padding: 20px 10px;
+    }
+  }
+  &__title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 1px 1px 0px rgba(#000, 20%);
+    @media screen and (max-width: 425px) {
+      font-size: 16px;
+    }
+  }
+  &__input {
+    position: relative;
+    padding: 15px;
+    @media screen and (max-width: 375px) {
+      width: 150px;
+    }
+  }
+  &__btn {
+    position: relative;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    background: $color-red;
+    transform: translateX(-5px);
+    transition: $transition-normal;
+    @media screen and (max-width: 425px) {
+      padding: 0 10px;
+    }
+    &:hover {
+      background: $color-red-hover;
+      &::before {
+        border-bottom: 40px solid $color-red-hover;
+      }
+      &::after {
+        border-top: 40px solid $color-red-hover;
+      }
+    }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      display: block;
+      clear: both;
+      width: 0;
+      height: 0;
+      transition: $transition-normal;
+      @media screen and (max-width: 425px) {
+        display: none;
+      }
+    }
+    &::before {
+      border-left: 30px solid transparent;
+      border-bottom: 40px solid $color-red;
+      left: -30px;
+    }
+    &::after {
+      border-right: 30px solid transparent;
+      border-top: 40px solid $color-red;
+      right: -30px;
+    }
+    & .fa-phone {
+      margin-right: 5px;
+    }
+  }
+  &__input,
+  &__btn {
+    font-family: 'Montserrat', sans-serif;
+    height: 40px;
+  }
 }
 
-.less {
-  background-color: $green-color;
-  width: 400px;
-  height: 600px;
-  margin: 0 auto;
+.block__wrapper {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.scss {
-  width: 400px;
-  height: 150px;
-  background-image: url(./../img/credit/card-fun.webp); 
+.input__wrapper {
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    display: block;
+    clear: both;
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-bottom: 40px solid #fff;
+    left: -30px;
+    @media screen and (max-width: 425px) {
+        display: none;
+      }
+  }
 }
