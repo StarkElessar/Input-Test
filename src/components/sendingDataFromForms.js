@@ -41,7 +41,7 @@ const submissionForms = () => {
 
       const formData = new FormData(form)
 
-      postData('../mail-telegram.php', formData)
+      postData('./mail-telegram.php', formData)
         .then(result => {
           console.log(result)
           // statusMessage.textContent = textMessages.succes
