@@ -1,4 +1,4 @@
-const submissionForms = () => {
+export default () => document.addEventListener('DOMContentLoaded', () => {
   const allForms    = document.querySelectorAll('form'),
         allInputs   = document.querySelectorAll('input'),
         phoneInputs = document.querySelectorAll('input[name="user_phone"]')
@@ -7,6 +7,9 @@ const submissionForms = () => {
     phoneInputs.forEach(input => {
       input.addEventListener('input', () => {
         input.value = input.value.replace(/\D/, '')
+        if (input.value.length > 10) {
+          input.value = input.value.slice(0, 11)
+        }
       })
     })
   }
@@ -65,4 +68,4 @@ const submissionForms = () => {
       })
     })
   }
-}
+})

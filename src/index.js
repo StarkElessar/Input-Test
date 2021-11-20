@@ -9,8 +9,6 @@ import '@fortawesome/fontawesome-free/js/brands'
 // project code
 import './styles/style.scss'
 
-import './components/sendingDataFromForm'
+import submissionForms from './components/sendingDataFromForms'
 
-window.addEventListener('DOMContentLoaded', () => {
-  submissionForms()
-})
+submissionForms()
