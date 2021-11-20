@@ -9,6 +9,7 @@ import '@fortawesome/fontawesome-free/js/brands'
 // project code
 import './styles/style.scss'
 
+import './components/phoneInputMask'
 import submissionForms from './components/sendingDataFromForms'
 
 submissionForms()

@@ -1,23 +1,23 @@
 export default () => document.addEventListener('DOMContentLoaded', () => {
   const allForms    = document.querySelectorAll('form'),
-        allInputs   = document.querySelectorAll('input'),
-        phoneInputs = document.querySelectorAll('input[name="user_phone"]')
+        allInputs   = document.querySelectorAll('input')
+        // phoneInputs = document.querySelectorAll('input[name="user_phone"]')
 
-  if (phoneInputs.length > 0) {
-    phoneInputs.forEach(input => {
-      input.addEventListener('input', () => {
-        input.value = input.value.replace(/\D/, '')
-        if (input.value.length > 10) {
-          input.value = input.value.slice(0, 11)
-        }
-      })
-    })
-  }
+  // if (phoneInputs.length > 0) {
+  //   phoneInputs.forEach(input => {
+  //     input.addEventListener('input', () => {
+  //       input.value = input.value.replace(/\D/, '')
+  //       if (input.value.length > 10) {
+  //         input.value = input.value.slice(0, 11)
+  //       }
+  //     })
+  //   })
+  // }
 
   const textMessages = {
     loading: 'Загрузка...',
     succes: 'Спасибо! Скоро мы с Вами свяжемся',
-    failure: 'Что-то пошло не так..'
+    failure: 'Что-то пошло не так..',
   }
 
   const postData = async (url, data) => {
